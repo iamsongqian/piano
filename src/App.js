@@ -3,7 +3,7 @@ import "./App.css"
 import { Button, Input, List } from "antd"
 import "antd/dist/antd.css"
 import store from "./redux/store"
-import axios from "axios"
+import { changeValueAction, addListAction, deleteListAction } from "./redux/actionContext"
 
 export default class App extends React.Component {
 	constructor(props) {
@@ -13,17 +13,13 @@ export default class App extends React.Component {
 	}
 	updateValue = () => this.setState(store.getState())
 	changeValue = e => {
-		const action = {
-			type: "CHANGE_VALUE",
-			inputValue: e.target.value,
-		}
-		store.dispatch(action)
+		store.dispatch(changeValueAction(e.target.value))
 	}
 	addList = () => {
-		const action = {
-			type: "ADD_LIST",
-		}
-		store.dispatch(action)
+		store.dispatch(addListAction())
+	}
+	deleteList = key => {
+		store.dispatch(deleteListAction(key))
 	}
 	render() {
 		const state = this.state
@@ -42,7 +38,15 @@ export default class App extends React.Component {
 					<List
 						size="default"
 						dataSource={state.list}
-						renderItem={item => <List.Item>{item}</List.Item>}
+						renderItem={(item, index) => (
+							<List.Item>
+								{item}
+								<span className="delete" onClick={() => this.deleteList(index)}>
+									x
+								</span>
+							</List.Item>
+						)}
+						action={<div>123</div>}
 						bordered
 					/>
 				</div>

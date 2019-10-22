@@ -5,14 +5,19 @@ const defaultState = {
 }
 export default (state = defaultState, action) => {
 	switch (action.type) {
-		case "CHANGE_VALUE":
+		case "changeValue":
 			return Object.assign({}, state, {
 				inputValue: action.inputValue,
 			})
-		case "ADD_LIST":
+		case "addList":
 			defaultState.list.push(state.inputValue)
 			return Object.assign({}, state, {
-				inputValue:'',
+				inputValue: "",
+				list: defaultState.list,
+			})
+		case "deleteList":
+			defaultState.list.splice(action.key, 1)
+			return Object.assign({}, state, {
 				list: defaultState.list,
 			})
 		default:

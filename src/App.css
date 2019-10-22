@@ -9,7 +9,14 @@
 .list{
   display: flex;
   justify-content: center;
+
 }
 .ant-list{
   width: 500px;
+}
+.delete{
+  color: red;
+  cursor: pointer;
+  font-size: 20px;
+  margin-left:10px;
 }
