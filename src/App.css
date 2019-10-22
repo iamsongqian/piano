@@ -1,8 +1,15 @@
 .app{
+  text-align: center;
 
 }
-.item {
+.ant-input.inputText{
+  width: 300px;
+  margin: 20px;
+}
+.list{
   display: flex;
-  align-items: center;
-  height: 50px;
+  justify-content: center;
+}
+.ant-list{
+  width: 500px;
 }
