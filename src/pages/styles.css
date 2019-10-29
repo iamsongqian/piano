@@ -1,0 +1,19 @@
+.container {
+	display: flex;
+}
+.left {
+	flex: 1;
+	display: flex;
+  min-width: 210px;
+  max-width: 300px;
+	flex-flow: column;
+	align-items: center;
+	background-color: aqua;
+}
+.right {
+	flex: 3;
+}
+.left-list {
+	color: black;
+	margin: 20px;
+}

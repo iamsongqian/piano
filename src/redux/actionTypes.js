@@ -1,3 +1,5 @@
 export const CHANGE_VALUE='changeValue'
 export const ADD_LIST = 'addList'
-export const DELETE_LIST='deleteList'
+export const DELETE_LIST = 'deleteList'
+export const GET_LIST = 'getList'
+export const LOG_IN = 'login'

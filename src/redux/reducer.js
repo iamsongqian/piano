@@ -6,20 +6,27 @@ const defaultState = {
 export default (state = defaultState, action) => {
 	switch (action.type) {
 		case "changeValue":
-			return Object.assign({}, state, {
+			return {
+				...state,
 				inputValue: action.inputValue,
-			})
+			}
 		case "addList":
-			defaultState.list.push(state.inputValue)
-			return Object.assign({}, state, {
+			return {
+				...state,
 				inputValue: "",
-				list: defaultState.list,
-			})
+				list: [...state.list, state.inputValue],
+			}
 		case "deleteList":
-			defaultState.list.splice(action.key, 1)
 			return Object.assign({}, state, {
-				list: defaultState.list,
+				list: state.list.filter((item, index) => index !== action.key),
 			})
+		case "getList":
+			return Object.assign({}, state, { list: [...action.list] })
+		case "login":
+			return {
+				...state,
+				username:action.username
+			}
 		default:
 			return state
 	}
