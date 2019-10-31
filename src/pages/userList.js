@@ -1,7 +1,12 @@
-import React from "react"
+import React, { useState, useEffect,createContext,useContext,useReducer } from "react"
 
-export default class UserList extends React.Component {
-	render() {
-		return <div>UserList</div>
-	}
+
+export default function UserList() {
+	return (
+		<>
+			<Color>
+				<ShowArea />
+			</Color>
+		</>
+	)
 }
