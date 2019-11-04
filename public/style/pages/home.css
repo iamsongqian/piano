@@ -1,0 +1,21 @@
+.whole{
+  margin-top: 4.5rem;
+}
+.whole-left{
+  border-radius: .5rem;
+  background-color: #fff;
+  padding: .5rem;
+}
+.ant-list-pagination{
+  text-align: center;
+}
+.whole-right{
+  border-radius: .5rem;
+  margin-left: 1rem;
+  background-color: lightblue;
+}
+.footer-style{
+  height: 3.5rem;
+  text-align: center;
+  font-size: 1.5rem;
+}
