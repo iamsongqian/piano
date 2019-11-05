@@ -1,12 +1,13 @@
 import React from "react"
-import "../public/style/components/header.css"
-import { Row, Col, Menu, Icon ,Dropdown} from "antd"
+import "../../public/style/components/header.css"
+import Router from "next/router"
+import { Row, Col, Menu, Icon, Dropdown } from "antd"
 
 const Header = () => {
 	const menu = (
 		<Menu>
 			<Menu.Item>
-				<a href="/tab1">tab1</a>
+				<a href="/music/recommend">netease-music</a>
 			</Menu.Item>
 			<Menu.Item>
 				<a href="/tab2">tab2</a>
@@ -16,18 +17,25 @@ const Header = () => {
 			</Menu.Item>
 		</Menu>
 	)
+
 	return (
 		<div className="header">
 			<Row justify="center" type="flex">
 				<Col xs={22} sm={22} md={10} lg={10} xl={10}>
-					<span className="header-logo">logo</span>
-					<span className="header-text">illustrate text</span>
+					<img src={"../static/image/logo.png"} className="logo-img" />
+					<span className="logo-text"> 网易云音乐 - private</span>
 				</Col>
 				<Col xs={0} sm={0} md={13} lg={12} xl={8}>
 					<Menu mode="horizontal">
-						<Menu.Item key="home">
+						<Menu.Item
+							key="home"
+							className="ant-menu-item-active"
+							onClick={() => {
+								Router.push("/music/recommend")
+							}}
+						>
 							<Icon type="home" style={{ fontSize: "20px" }} />
-							tab1
+							music
 						</Menu.Item>
 						<Menu.Item key="pic-center">
 							<Icon type="pic-center" style={{ fontSize: "20px" }} />

@@ -9,16 +9,15 @@
 	padding: 0.3rem;
 	z-index: 99;
 }
-.header-logo {
-	color: #1e90ff;
-	font-size: 2rem;
-	text-align: left;
+.logo-img {				
+	width: 3.5rem;
 }
-.header-text {
+.logo-text {
 	font-size: 1.3rem;
 	color: #999;
 	display: inline-block;
 	padding-left: 0.3rem;
+	vertical-align: middle;
 }
 .ant-menu {
 	border-bottom: none ;
