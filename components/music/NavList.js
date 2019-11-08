@@ -1,7 +1,8 @@
 import { Menu } from "antd"
 import Link from "next/link"
-import { getKeyFromChildrenIndex } from "rc-menu/lib/util"
-
+import Login from "./Login"
+import { useEffect, useState } from "react"
+import Cookies from "js-cookie"
 const navList = [
 	{
 		name: "推荐",
@@ -24,14 +25,26 @@ const navList = [
 		url: "/music/newup",
 	},
 ]
-const menuOne = (
-	<Menu.Item href="/music/recommend">
-		<a>推荐</a>
-	</Menu.Item>
-)
-const NavList = () => {
+const NoLog = props => {
 	return (
-		<div>
+		<span className="nolog">
+			welcome:{props.name}
+			<style jsx>{`
+				.nolog {
+					
+				}
+			`}</style>
+		</span>
+	)
+}
+const NavList = () => {
+	let name = Cookies.get("nickname")
+	let [show, setShow] = useState(true)
+	useEffect(() => {
+		show=setShow(!show)
+	},[name])
+	return (
+		<div className="navList">
 			<Menu mode="horizontal" style={{ textAlign: "center" }}>
 				{navList.map((item, index) => (
 					<Menu.Item key={index}>
@@ -41,6 +54,19 @@ const NavList = () => {
 					</Menu.Item>
 				))}
 			</Menu>
+			{show ? (
+				<Login/>
+			) : (
+				<NoLog name={name} />
+			)}
+			<style jsx>{`
+				.navList {
+					display: flex;
+					justify-content: center;
+					background-color: white;
+					align-items: center;
+				}
+			`}</style>
 		</div>
 	)
 }

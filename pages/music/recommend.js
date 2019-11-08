@@ -1,8 +1,10 @@
+import React from 'react'
 import Music from "./index"
+import Banners from '../../components/music/Banners'
 const recommend = () => {
 	return (
 		<Music>
-			<p>recommend</p>
+			<Banners />
 		</Music>
 	)
 }

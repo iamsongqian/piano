@@ -1,0 +1,38 @@
+.modal-container {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+.input-container {
+	width: 20rem;
+}
+.input-control1 {
+	margin: 2rem 0 ;
+}
+.input-control2 {
+	margin-bottom: 2rem;
+}
+.logon-password ,.check-password,.logon-tel{
+	margin: 0.6rem 0 0.4rem 0;
+}
+.check-container{
+	display: flex;
+	align-items: center;
+	margin-bottom: 1rem;
+}
+.check-code{
+	margin: 0.6rem 0 0.4rem 0;
+}
+.send-code{
+	margin-left: 1rem;
+}
+.back-to-login{
+	position: absolute;
+	cursor: pointer;
+	top: 1.46rem;
+	left:2rem
+}
+.back-to-login:hover{
+	color:#1890ff
+}

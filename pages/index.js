@@ -4,7 +4,6 @@ import Head from "next/head"
 import "../public/style/pages/home.css"
 import { Row, Col, Divider } from "antd"
 import ArticleLeft from "../components/home/ArticleList"
-
 const Home = () => {
 	return (
 		<div>

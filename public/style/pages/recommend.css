@@ -1,0 +1,58 @@
+.ant-carousel {
+	width: 730px;
+}
+.ant-carousel .slick-slide {
+	height: 300px;
+	overflow: hidden;
+}
+
+.ant-carousel .slick-slide h3 {
+	color: #fff;
+}
+
+.img-banner {
+	height: 300px;
+	z-index: 999;
+}
+.img-back {
+	background-size: 6000px;
+	background-position: center center;
+}
+.box {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 0 10px;
+}
+.ant-carousel .slick-next {
+	right: -60px;
+	top: 130px;
+	width: 30px;
+	height: 60px;
+}
+.ant-carousel .slick-prev {
+	left: -60px;
+	top: 130px;
+	width: 30px;
+	height: 60px;
+}
+.click-pre {
+	display: block;
+	height: 60px;
+	padding-top: 15px;
+	margin-right: 30px;
+	font-size: 30px;
+	cursor: pointer;
+	color: #fff;
+	background-color:rgba(0,0,0,.1);
+}
+.click-next {
+	display: block;
+	height: 60px;
+	padding-top: 15px;
+	margin-left: 30px;
+	font-size: 30px;
+	cursor: pointer;
+	color: #fff;
+	background-color:rgba(0,0,0,.1);
+}
