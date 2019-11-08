@@ -23,7 +23,7 @@ const Header = () => {
 			<Row justify="center" type="flex">
 				<Col xs={22} sm={22} md={10} lg={10} xl={10}>
 					<img src={"../static/image/logo.png"} className="logo-img" />
-					<span className="logo-text"> 网易云音乐 - private</span>
+					<span className="logo-text"> EMI MUSIC - private</span>
 				</Col>
 				<Col xs={0} sm={0} md={13} lg={12} xl={8}>
 					<Menu mode="horizontal">
