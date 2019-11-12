@@ -1,0 +1,86 @@
+.hot-rc {
+	width: 50rem;
+	margin-left: 3rem;
+	margin-top: 3rem;
+}
+.tab-wrap {
+	display: flex;
+	height: 5rem;
+	align-items: center;
+}
+.rc-logo {
+	width: 3rem;
+	height: 3rem;
+	margin-left: 3rem;
+	border-radius: 50%;
+	background-color: lightgreen;
+	position: relative;
+}
+.rc-logo-inner {
+	position: absolute;
+	top: 25%;
+	left: 25%;
+	width: 1.5rem;
+	height: 1.5rem;
+	border-radius: 50%;
+	background-color: lightsalmon;
+}
+.rc-link {
+	margin-left: 1.5rem;
+	font-size: 1.5rem;
+	color: dimgrey;
+}
+.rc-link:hover {
+	color: dimgrey;
+}
+.album-wrap {
+	display: flex;
+	width: 85%;
+	height: 200px;
+	margin-left: 3.9rem;
+	align-items: center;
+	justify-content: center;
+}
+
+.album-wrap .ant-carousel {
+	width: 600px;
+}
+.album-wrap .ant-carousel .slick-slide {
+	height: 200px;
+	overflow: hidden;
+}
+.album-wrap .slick-next {
+	right: -30px;
+	top: 90px;
+}
+.album-wrap .slick-prev {
+	left: -30px;
+	top: 90px;
+}
+.album-list {
+	display: flex !important;
+}
+.single-album {
+	width: 100px;
+	margin-top: 40px;
+	margin-left: 10px;
+	margin-right: 10px;
+}
+.album-icon {
+	display: inline-block;
+	width: 100px;
+	height: 100px;
+}
+.single-album .album-text {
+	display: block;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	color: black;
+	font-size: 12px;
+}
+.single-album .album-text:hover {
+	
+	color: black;
+	text-decoration: underline;
+}
