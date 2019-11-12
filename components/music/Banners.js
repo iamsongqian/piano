@@ -10,7 +10,7 @@ const Banners = () => {
 		const result = await axios.get(`${URL}/banner?type=1`)
 		setImgList(result.data.banners)
 		let firstImg = result.data.banners[0].pic
-		const rubissh = backImg.current.style
+		const rubissh = !!backImg.current.style && backImg.current.style
 		rubissh.background = `url(${firstImg}?imageView&blur=40x20)`
 		rubissh.backgroundSize = "6000px"
 		rubissh.backgroundPosition = "center center"

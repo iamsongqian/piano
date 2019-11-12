@@ -1,0 +1,32 @@
+.bill-list {
+	display: flex;
+	margin-left: 4rem;
+	width: 675px;
+}
+.single-list {
+	flex: 1;
+}
+.single-img {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin-bottom: 0.5rem;
+}
+.img-item {
+	width: 80px;
+	height: 80px;
+}
+.single-item {
+	display: flex;
+	height: 2rem;
+	align-items: center;
+}
+.single-click {
+	color: black;
+	margin-left: 20px;
+	font-size: 13px;
+}
+.single-list a:hover {
+	color: black;
+	text-decoration: underline;
+}
