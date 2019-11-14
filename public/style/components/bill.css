@@ -25,6 +25,7 @@
 	color: black;
 	margin-left: 20px;
 	font-size: 13px;
+	white-space: nowrap;
 }
 .single-list a:hover {
 	color: black;
