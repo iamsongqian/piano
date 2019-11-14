@@ -151,7 +151,10 @@
 	z-index: 55;
 }
 .desc {
+	width: 140px;
 	color: black;
+	height: 42px;
+	overflow: hidden;
 }
 .desc:hover {
 	color: black;
