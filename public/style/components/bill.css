@@ -5,6 +5,7 @@
 }
 .single-list {
 	flex: 1;
+	overflow: hidden;
 }
 .single-img {
 	display: flex;
@@ -26,6 +27,8 @@
 	margin-left: 20px;
 	font-size: 13px;
 	white-space: nowrap;
+	text-overflow: ellipsis;
+	overflow: hidden;
 }
 .single-list a:hover {
 	color: black;

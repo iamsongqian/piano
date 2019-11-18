@@ -24,3 +24,47 @@
   left: 12px;
   font-size: 16px;
 }
+.hei .ant-modal-wrap{
+  position: relative;
+  overflow: hidden;
+  white-space: nowrap;
+}
+.hei .search-modal{
+  top:5px;
+  width: 250px !important;
+  padding-bottom:0;
+  flex-wrap: nowrap;
+}
+.hei .ant-modal-body{
+  padding: 0;
+}
+.hei p{
+  margin-bottom: 0;
+}
+.search-item{
+  display: flex;
+  align-items: center;
+  flex: 1;
+}
+.search-border{
+  border-bottom: .5px lightgrey solid;
+}
+.search-context{
+  flex-direction: column;
+  border-left: .5px lightgrey solid;
+  margin-left: 8px;
+  padding-left: 8px;
+}
+.one-item{
+  height: 30px;
+  justify-content: center;
+}
+.one-item span{
+  line-height: 30px;
+}
+.hei .ant-modal.zoom-enter{
+  animation-duration: 0ms !important
+}
+.hei .ant-modal.zoom-leave{
+  animation-duration: 0ms !important;
+}
