@@ -1,11 +1,11 @@
 {
   "name": "piano",
   "version": "0.1.0",
-  "private": true,
+  "homepage": ".",
   "scripts": {
     "dev": "next dev -p 3001",
-    "build": "next build",
-    "start": "next start"
+    "start": "next start -p 3001",
+    "export": "next build && next export && serve out"
   },
   "dependencies": {
     "@zeit/next-css": "^1.0.1",

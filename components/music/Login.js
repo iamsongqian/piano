@@ -1,11 +1,10 @@
 import React from "react"
-import {  connect } from 'react-redux'
+import { connect } from "react-redux"
 import { Modal, Button, Input, Icon } from "antd"
 import "../../public/style/components/login.css"
 import axios from "axios"
 import { URL } from "../../public/utils/requestConfig"
-import Cookies from 'js-cookie'
-
+import Cookies from "js-cookie"
 
 class Login extends React.Component {
 	constructor(props) {
@@ -140,9 +139,7 @@ class Login extends React.Component {
 	render() {
 		return (
 			<div>
-				<span onClick={this.showModal}>
-					登录
-				</span>
+				<span onClick={this.showModal}>登录</span>
 				<Modal
 					footer={null}
 					visible={this.state.visible}
@@ -243,7 +240,4 @@ const mapDispatchToProps = dispatch => {
 	}
 }
 
-export default connect(
-	mapStateToProps,
-	mapDispatchToProps,
-)(Login)
+export default connect(mapStateToProps, mapDispatchToProps)(Login)

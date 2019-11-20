@@ -38,7 +38,7 @@ const SingleBill = props => {
 						className="single-item"
 						style={{
 							backgroundColor: `${index % 2 === 0 ? "#E8E8E8" : "#F4F4F4"}`,
-							display:`${typeof(item)==='number'?'none':''}`
+							display: `${typeof item === "number" ? "none" : ""}`,
 						}}>
 						<span
 							style={{
