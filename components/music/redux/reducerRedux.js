@@ -1,13 +1,14 @@
 const defaultState = {
-	info: {
-		nickname:'未登录'
-	},
+	nickname:'未登录'
 }
-export const reducer = (state = defaultState, action) => {
+ const reducer = (state = defaultState, action) => {
 	switch (action.type) {
 		case "UPDATE_INFO":
-			return action.info
+			return Object.assign({},{...state}, {
+				nickname:action.info.nickname
+			})
 		default:
-			return state.info
+			return state
 	}
 }
+export default reducer

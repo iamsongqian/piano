@@ -87,6 +87,7 @@ class Login extends React.Component {
 									path: "/",
 								})
 								this.setState({ visible: false })
+								console.log(global)
 						}
 					})
 			}

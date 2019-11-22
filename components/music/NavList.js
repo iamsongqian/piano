@@ -2,7 +2,7 @@ import { Menu } from "antd"
 import Link from "next/link"
 import Login from "./Login"
 import { useEffect, useState } from "react"
-import Cookies from "js-cookie"
+import { connect } from 'react-redux'
 const navList = [
 	{
 		name: "推荐",
@@ -25,40 +25,30 @@ const navList = [
 		url: "/music/newup",
 	},
 ]
-const NoLog = props => {
-	return (
-		<span className="nolog">
-			welcome:{props.name}
-			<style jsx>{`
-				.nolog {
-					
-				}
-			`}</style>
-		</span>
-	)
-}
-const NavList = () => {
-	let name = Cookies.get("nickname")
-	let [show, setShow] = useState(true)
+const NavList = (props) => {
+	console.log(props)
+	let [url,setUrl]=useState()
 	useEffect(() => {
-		show=setShow(!show)
-	},[name])
+		setUrl(global.location.pathname)
+	}, [])
 	return (
 		<div className="navList">
 			<Menu mode="horizontal" style={{ textAlign: "center" }}>
 				{navList.map((item, index) => (
 					<Menu.Item key={index}>
 						<Link href={item.url}>
-							<a style={{ color: "#a11" }}>{item.name}</a>
+							<a
+								style={{
+									color: `${item.url === url ? "red" : "purple"}`,
+								}}>
+								{item.name}
+							</a>
 						</Link>
 					</Menu.Item>
 				))}
 			</Menu>
-			{show ? (
-				<Login/>
-			) : (
-				<NoLog name={name} />
-			)}
+			<Login />
+			<p>{props.nickname}</p>
 			<style jsx>{`
 				.navList {
 					display: flex;
@@ -70,4 +60,4 @@ const NavList = () => {
 		</div>
 	)
 }
-export default NavList
+export default connect(state=>state)(NavList)

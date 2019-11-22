@@ -23,7 +23,6 @@ const Streamer = () => {
 							href={`https://music.163.com/user/home?id=${item.id}`}
 							className="singer-item">
 							<img src={`${item.avatarUrl}?param=62y62`} />
-							{console.log(item)}
 							<div className="singer-dec">
 								<span>{item.nickName}</span>
 								<span>no description</span>
