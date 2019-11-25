@@ -1,0 +1,33 @@
+.side-co{
+  flex:0 0 240px !important;
+  min-width: 240px!important;
+  max-width: 240px!important;
+  width: 240px!important;
+  background-color: white;
+}
+.rank-item{
+  display: flex;
+  margin-top: 0 !important;
+  height: 70px !important;
+  align-items: center;
+  font-size: small !important;
+}
+.list-dec{
+ display:flex;
+ flex-direction:column;
+ height: 70px;
+ margin-left: 16px;
+}
+.list-dec p{
+  height: 1rem;
+}
+.rank-item-top{
+  display: flex;
+  margin-left: 2rem;
+}
+.top-co{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  margin-left: 2rem;
+}

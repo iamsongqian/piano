@@ -2,7 +2,7 @@ import { Menu } from "antd"
 import Link from "next/link"
 import Login from "./Login"
 import { useEffect, useState } from "react"
-import { connect } from 'react-redux'
+import { connect } from "react-redux"
 const navList = [
 	{
 		name: "推荐",
@@ -25,12 +25,13 @@ const navList = [
 		url: "/music/newup",
 	},
 ]
-const NavList = (props) => {
-	console.log(props)
-	let [url,setUrl]=useState()
+const NavList = props => {
+	let [url, setUrl] = useState()
+	let [show, setShow] = useState(true)
 	useEffect(() => {
 		setUrl(global.location.pathname)
-	}, [])
+		props.nickname !== "" ? setShow(false) : setShow(true)
+	}, [props.nickname])
 	return (
 		<div className="navList">
 			<Menu mode="horizontal" style={{ textAlign: "center" }}>
@@ -47,8 +48,8 @@ const NavList = (props) => {
 					</Menu.Item>
 				))}
 			</Menu>
-			<Login />
-			<p>{props.nickname}</p>
+			{show ? <Login /> : ""}
+			<span>{props.nickname}</span>
 			<style jsx>{`
 				.navList {
 					display: flex;
@@ -60,4 +61,4 @@ const NavList = (props) => {
 		</div>
 	)
 }
-export default connect(state=>state)(NavList)
+export default connect(state => state)(React.memo(NavList))
