@@ -1,4 +1,4 @@
-import { Icon } from "antd"
+import { Icon, Table } from "antd"
 import "../../public/style/pages/rank.css"
 import { useState, useEffect } from "react"
 import Axios from "axios"
@@ -41,26 +41,48 @@ const list = {
 }
 const RankItem = props => {
 	props = "name" in props ? props : props.ini
-  const [id, setId] = useState("3")
-  const [song,setSong]=useState()
+	const [id, setId] = useState("3")
+	const [song, setSong] = useState()
 	useEffect(() => {
 		const findId = (obj, val, compare = (a, b) => a === b) =>
 			Object.keys(obj).find(k => compare(obj[k], val))
 		setId(findId(list, props.name))
 	}, [props.name])
-  useEffect(() => {
-    const getData = async () => {
-      let result = await Axios(`${URL}/top/list?idx=${id}`)
-      setSong(!!result&&result.data.playlist.tracks)
-    }
-    getData()
-  }, [id])
-	const formatDate = time => {
+	useEffect(() => {
+		const getData = async () => {
+			let result = await Axios(`${URL}/top/list?idx=${id}`)
+			setSong(!!result && result.data.playlist.tracks)
+		}
+		getData()
+	}, [id])
+	const formatDate = (time,flag) => {
 		var data = new Date(time)
+		var year = data.getFullYear()
 		var month = data.getMonth() + 1
 		var date = data.getDate()
-		return `${month}月${date}日`
+		return flag === "year"
+			? `${year}年${month}月${date}日`
+			: `${month}月${date}日`
 	}
+	const columns = [
+		{
+			title: "歌名",
+			dataIndex: "name",
+			width: 400,
+			align: "center",
+		},
+		{
+			title: "发布时间",
+			width: 400,
+			render: item => <span>{formatDate(item.publishTime, "year")}</span>,
+			align: "center",
+		},
+		{
+			title: "歌手",
+			dataIndex: "ar[0].name",
+			align: "center",
+		},
+	]
 	return (
 		<div className="rank-item-co">
 			<div className="rank-item-top">
@@ -69,18 +91,18 @@ const RankItem = props => {
 					<p style={{ fontSize: 25 }}>{props.name}</p>
 					<span>
 						<Icon type="clock-circle" />
-            最近更新:{formatDate(props.updateTime)}({props.updateFrequency})
+						最近更新:{formatDate(props.updateTime)}({props.updateFrequency})
 					</span>
 				</div>
-      </div>
-      <div>
-        {!!song && song.map(item => {
-          console.log(item)
-          return (
-            <p>{item.name}</p>
-          )
-        })}
-      </div>
+			</div>
+			<div>
+				<Table
+					columns={columns}
+					dataSource={song}
+					pagination={false}
+					rowKey={(record,index )=>index}
+				/>
+			</div>
 		</div>
 	)
 }

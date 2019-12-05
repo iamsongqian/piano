@@ -17,12 +17,12 @@ const rank = () => {
 		}
 		getList()
 	}, [])
-	const selectRank = item  => {
+	const selectRank = item => {
 		setItem(item)
 		global.scroll(0, 0)
 	}
 	RankItem.defaultProps = {
-		ini: !!list&&list[0],
+		ini: !!list && list[0],
 	}
 
 	return (

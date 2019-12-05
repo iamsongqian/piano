@@ -25,18 +25,20 @@ const Bill = () => {
 				<div className="rc-logo">
 					<div className="rc-logo-inner" />
 				</div>
-				<a className="rc-link" href="">
+				<a className="rc-link" href="/music/rank">
 					榜单
 				</a>
 				<div style={{ marginLeft: 517 }}>
-					<a className="more-text">更多</a>
+					<a className="more-text" href="/music/rank">
+						更多
+					</a>
 					<Icon type="right" className="more-icon" />
 				</div>
 			</div>
 			<div className="bill-list">
 				{!!oribill &&
 					[upbill, newsongbill, oribill].map((item, index) => {
-						return <SingleBill {...item} id={index} key={index}/>
+						return <SingleBill {...item} id={index} key={index} />
 					})}
 			</div>
 		</div>

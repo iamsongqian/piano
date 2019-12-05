@@ -1,0 +1,20 @@
+.sl-co {
+	display: flex;
+	justify-content: center;
+}
+.sl-inn {
+	width: 1200px;
+	background-color: white;
+	border-left: 1px rgba(0, 0, 0, 0.1) solid;
+	border-right: 1px rgba(0, 0, 0, 0.1) solid;
+}
+.sl-sle {
+	display: flex;
+	align-items: center;
+}
+.tag{
+	width: 720px;
+	display: flex;
+	align-items:space-between;
+	justify-content: space-evenly;
+}

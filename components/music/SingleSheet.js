@@ -22,7 +22,9 @@ const SingleSheet = props => {
 		<div className="sheet-wrap">
 			<a
 				href={`https://music.163.com/playlist?id=${props.id}`}
-				style={{ background: `url(${props.picUrl}?param=140y140)` }}
+				style={{
+					background: `url(${props.picUrl || props.coverImgUrl}?param=140y140)`,
+				}}
 				className="sheet-icon">
 				<div className="play-num">
 					<Icon type="customer-service" style={{ marginRight: 5 }} />
