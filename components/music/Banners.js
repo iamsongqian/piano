@@ -1,13 +1,12 @@
 import React, { useEffect, useState, useRef } from "react"
 import axios from "axios"
-import { URL } from "../../public/utils/requestConfig"
 import "../../public/style/pages/recommend.css"
 import { Carousel, Icon } from "antd"
 const Banners = () => {
 	const backImg = useRef()
 	const [imgList, setImgList] = useState([])
 	const fetchData = async () => {
-		const result = await axios.get(`${URL}/banner?type=1`)
+		const result = await axios.get(`/banner?type=1`)
 		setImgList(result.data.banners)
 		let firstImg = result.data.banners[0].pic
 		const rubissh = !!backImg.current.style && backImg.current.style

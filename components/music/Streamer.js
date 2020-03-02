@@ -1,11 +1,10 @@
 import { useState, useEffect } from "react"
-import { URL } from "../../public/utils/requestConfig"
 import Axios from "axios"
 const Streamer = () => {
   const [dj, setDj] = useState([])
   useEffect(() => {
     const getData = async () => {
-      const result = await Axios(`${URL}/dj/toplist/popular?limit=6`)
+      const result = await Axios(`/dj/toplist/popular?limit=6`)
       setDj(result.data.data.list)
     }
     getData()

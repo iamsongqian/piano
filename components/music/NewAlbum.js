@@ -2,14 +2,13 @@ import React, { useEffect, useState } from "react"
 import { Icon, Carousel } from "antd"
 import "../../public/style/components/single-album.css"
 import Axios from "axios"
-import { URL } from "../../public/utils/requestConfig"
 import SingleAlbum from './SingleAlbum'
 const NewAlbum = () => {
   const [prenew, setPrenew]= useState([])
   const [nextnew, setNextnew] = useState([])
   useEffect(() => {
     const getNew = async () => {
-      const result = await Axios(`${URL}/album/newest`)
+      const result = await Axios(`/album/newest`)
       setPrenew(result.data.albums.slice(0, 5))
       setNextnew(result.data.albums.slice(5, 10))
     }

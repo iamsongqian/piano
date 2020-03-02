@@ -1,7 +1,6 @@
 import Music from "./index"
 import { Dropdown,Icon,Button, Card, Tag } from "antd";
 import '../../public/style/pages/songlist.css'
-import { URL } from "../../public/utils/requestConfig";
 import { useEffect, useState } from "react";
 import Axios from "axios";
 import SingleSheet from "../../components/music/SingleSheet";
@@ -11,21 +10,21 @@ const songlist = () => {
 	const [playlist,setPlayList]= useState()
 	useEffect(() => {
 		const getData = async () => {
-			let cart = await Axios(`${URL}/playlist/catlist`)
+			let cart = await Axios(`/playlist/catlist`)
 			setCartList(cart.data)
 		}
 		getData()
 	}, [])
 	useEffect(() => {
 		const getList = async () => {
-			let result = await Axios(`${URL}/top/playlist?limit=60`)
+			let result = await Axios(`/top/playlist?limit=60`)
 			setPlayList(result.data.playlists)
 		}
 		getList()
 	}, [])
 	const selectTag = async item => {
 		setName(item.name)
-		let result = await Axios(`${URL}/top/playlist?limit=60&cat=${item.name}`)
+		let result = await Axios(`/top/playlist?limit=60&cat=${item.name}`)
 		setPlayList(result.data.playlists)
 
 	}

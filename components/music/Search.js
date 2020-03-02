@@ -1,7 +1,6 @@
 import { Input, Modal } from "antd"
 import Router from "next/router"
 import "../../public/style/components/search.css"
-import { URL } from "../../public/utils/requestConfig"
 import Axios from "axios"
 import { useState, useRef, useEffect } from "react"
 
@@ -15,7 +14,7 @@ const Search = () => {
 		if (e.target.value) {
 			setTitle(e.target.value)
 			const result = await Axios.get(
-				`${URL}/search/suggest?keywords=${e.target.value}`,
+				`/search/suggest?keywords=${e.target.value}`,
 			)
 			let list = result.data.result
 			if (list && JSON.stringify(list) !== "{}") {

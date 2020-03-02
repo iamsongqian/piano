@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react"
 import { Icon } from "antd"
 import "../../public/style/pages/recommend.css"
 import Axios from "axios"
-import { URL } from "../../public/utils/requestConfig"
 import SingleSheet from "./SingleSheet"
 
 const list = [
@@ -17,7 +16,7 @@ const HotRecommend = () => {
 	const [songList, setSongList] = useState([])
 	useEffect(() => {
 		const getList = async () => {
-			const result = await Axios.get(`${URL}/personalized?limit=8`)
+			const result = await Axios.get(`/personalized?limit=8`)
 			setSongList(result.data.result)
 		}
 		getList()

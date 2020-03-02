@@ -1,13 +1,12 @@
 import "../../public/style/components/singer.css"
 import { Icon } from "antd"
 import { useState, useEffect } from "react"
-import { URL } from "../../public/utils/requestConfig"
 import Axios from "axios"
 const Singers = () => {
   const [singer, setSinger] = useState([])
   useEffect(() => {
     const getData = async () => {
-      const result = await Axios(`${URL}/artist/list?cat=5001`)
+      const result = await Axios(`/artist/list?cat=5001`)
       setSinger(result.data.artists.slice(0, 5))
     }
     getData()

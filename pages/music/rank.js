@@ -2,7 +2,6 @@ import Music from "./index"
 import { Layout, Menu } from "antd"
 import { useEffect, useState } from "react"
 import Axios from "axios"
-import { URL } from "../../public/utils/requestConfig"
 import "../../public/style/pages/rank.css"
 import RankItem from "../../components/music/RankItem"
 
@@ -12,7 +11,7 @@ const rank = () => {
 	const [item, setItem] = useState()
 	useEffect(() => {
 		const getList = async () => {
-			let result = await Axios(`${URL}/toplist/detail`)
+			let result = await Axios(`/toplist/detail`)
 			setList(result.data.list)
 		}
 		getList()

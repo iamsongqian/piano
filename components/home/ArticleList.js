@@ -1,6 +1,6 @@
 import { List, Avatar, Icon } from "antd"
 import {  useEffect } from "react"
-import { URL } from "../../public/utils/requestConfig";
+
 import axios from "axios";
 
 const listData = []
@@ -23,7 +23,7 @@ const IconText = ({ type, text }) => (
 
 const ArticleLeft = () => {
 	useEffect(() => {
-		axios({ url: URL + "/top/song?type=96", withCredentials: true })
+		axios({ url:"/top/song?type=96", withCredentials: true })
 			.then(res => console.log(res.data))
 			.catch(err => console.log(err))
 })

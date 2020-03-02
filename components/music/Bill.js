@@ -1,7 +1,6 @@
 import { Icon } from "antd"
 import SingleBill from './SingleBill'
 import { useState, useEffect } from "react"
-import { URL } from "../../public/utils/requestConfig"
 import Axios from "axios"
 import '../../public/style/components/bill.css'
 const Bill = () => {
@@ -10,9 +9,9 @@ const Bill = () => {
 	let [oribill, setOribill] = useState()
 	useEffect(() => {
 		const getBill = async () => {
-			let upResult = await Axios.get(`${URL}/top/list?idx=3`)
-			let newResult = await Axios.get(`${URL}/top/list?idx=0`)
-			let oriResult = await Axios.get(`${URL}/top/list?idx=2`)
+			let upResult = await Axios.get(`/top/list?idx=3`)
+			let newResult = await Axios.get(`/top/list?idx=0`)
+			let oriResult = await Axios.get(`/top/list?idx=2`)
 			setUpbill(upResult.data.playlist.tracks.slice(0, 10))
 			setNewsongbill(newResult.data.playlist.tracks.slice(0, 10))
 			setOribill(oriResult.data.playlist.tracks.slice(0, 10))

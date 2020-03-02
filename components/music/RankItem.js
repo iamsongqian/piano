@@ -2,7 +2,6 @@ import { Icon, Table } from "antd"
 import "../../public/style/pages/rank.css"
 import { useState, useEffect } from "react"
 import Axios from "axios"
-import { URL } from "../../public/utils/requestConfig";
 const list = {
 	"0": "云音乐新歌榜",
 	"1": "云音乐热歌榜",
@@ -50,7 +49,7 @@ const RankItem = props => {
 	}, [props.name])
 	useEffect(() => {
 		const getData = async () => {
-			let result = await Axios(`${URL}/top/list?idx=${id}`)
+			let result = await Axios(`/top/list?idx=${id}`)
 			setSong(!!result && result.data.playlist.tracks)
 		}
 		getData()

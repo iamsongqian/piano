@@ -3,7 +3,6 @@ import { connect } from "react-redux"
 import { Modal, Button, Input, Icon } from "antd"
 import "../../public/style/components/login.css"
 import axios from "axios"
-import { URL } from "../../public/utils/requestConfig"
 import Cookies from "js-cookie"
 
 class Login extends React.Component {
@@ -63,13 +62,13 @@ class Login extends React.Component {
 		}
 		try {
 			let res = await axios.get(
-				`${URL}/cellphone/existence/check?phone=${phone}`,
+				`/cellphone/existence/check?phone=${phone}`,
 			)
 			if (res.data.exist === -1) {
 				alert("该号码未注册")
 			} else {
 				await axios
-					.get(`${URL}/login/cellphone?phone=${phone}&password=${password}`)
+					.get(`/login/cellphone?phone=${phone}&password=${password}`)
 					.then(res => {
 						switch (res.data.code) {
 							case 502:
@@ -102,7 +101,7 @@ class Login extends React.Component {
 	sendCode = () => {
 		const { logphone } = this.state
 		axios
-			.get(`${URL}/captcha/sent?phone=${logphone}`)
+			.get(`/captcha/sent?phone=${logphone}`)
 			.catch(err => alert(err.response.data.message))
 	}
 	logon = async () => {
@@ -123,11 +122,11 @@ class Login extends React.Component {
 		}
 		try {
 			let result = await axios.get(
-				`${URL}/captcha/verify?phone=${logphone}&captcha=${checkcode}`,
+				`/captcha/verify?phone=${logphone}&captcha=${checkcode}`,
 			)
 			if (result.status === 200) {
 				await axios.get(
-					`${URL}register/cellphone?phone=${logphone}&password=${logpassword}&captcha=${checkcode}&nickname=${nickname}`,
+					`register/cellphone?phone=${logphone}&password=${logpassword}&captcha=${checkcode}&nickname=${nickname}`,
 				)
 			}
 		} catch (err) {
