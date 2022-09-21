@@ -6,6 +6,7 @@
     "dev": "next dev -p 3001",
     "start": "next start -p 3001",
     "export": "next build && next export && serve out"
+    "build":"next build && next export && serve out"
   },
   "dependencies": {
     "@zeit/next-css": "^1.0.1",
